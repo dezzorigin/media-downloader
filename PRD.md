@@ -5,8 +5,7 @@
 | Field | Nilai |
 |---|---|
 | Nama Proyek | Media Downloader |
-| Repo | dezzorigin/media-downloader |
-| Tech Stack | Next.js 14 |
+| Tech Stack | Next.js |
 | Status | Dalam pengembangan |
 | Penanggung Jawab | Nabil Aulia Dika |
 | Versi Dokumen | 1.0 |
@@ -14,7 +13,7 @@
 
 ## 2. Latar Belakang
 
-Proyek ini dikembangkan sebagai bagian dari portofolio dan kebutuhan operasional. Dokumen ini mengikuti standar PRD nasional untuk memastikan ruang lingkup, fitur, dan kriteria keberhasilan terdefinisi dengan jelas.
+Proyek ini dikembangkan sebagai bagian dari portofolio dan kebutuhan operasional. Dokumen ini mengikuti standar PRD nasional agar ruang lingkup, fitur, dan kriteria keberhasilan terdefinisi dengan jelas.
 
 ## 3. Masalah yang Diselesaikan
 
@@ -40,20 +39,19 @@ Pengguna membutuhkan solusi digital yang efisien, terukur, dan mudah dipelihara 
 ## 6. Fitur & Persyaratan Fungsional
 
 Struktur proyek (file/direktori utama):
-- .eslintrc.json
-- .gitignore
-- LICENSE
-- README.md
 - app/
-- eslint.config.mjs
 - hooks/
 - lib/
+- public/
+- LICENSE
+- PRD.md
+- README.md
+- eslint.config.mjs
 - metadata.json
 - next-env.d.ts
 - next.config.ts
 - package.json
 - postcss.config.mjs
-- public/
 - tsconfig.json
 
 ## 7. Persyaratan Non-Fungsional
@@ -65,7 +63,7 @@ Struktur proyek (file/direktori utama):
 
 ## 8. Arsitektur & Tech Stack
 
-Next.js 14
+Next.js
 
 ## 9. Milestone / Roadmap
 
