@@ -6,6 +6,7 @@ Media Downloader — project oleh Nabil Aulia Dika (dezzorigin).
 
 **Dalam pengembangan** _(README ada)_
 
+
 ## 📋 Tech Stack
 
 Next.js
@@ -55,5 +56,10 @@ npm run dev
 
 MIT — lihat [LICENSE](./LICENSE).
 
+
+## 🌐 Live Demo
+
+**https://3b8e5cbb.media-downloader-c5f.pages.dev**
 ---
+
 _Dikembangkan oleh **dezzorigin** (Nabil Aulia Dika)._
