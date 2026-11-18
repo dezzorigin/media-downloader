@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  push:
+    branches: [main, feat/**, fix/**, chore/**]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    name: Typecheck + lint + build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm run build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: static-export
+          path: out/
+
+  worker-test:
+    name: Edge worker unit test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      # No dependencies needed: the worker is dependency-free and the test
+      # stubs fetch, so this job runs without npm install.
+      - run: npm run test:worker
+
+  landing:
+    name: Landing checks (html-validate + links + smoke)
+    runs-on: ubuntu-latest
+    needs: validate
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - uses: actions/download-artifact@v4
+        with:
+          name: static-export
+          path: out/
+      - run: npm i -g html-validate@9 markdown-link-check@3
+      # The landing is prerendered into out/index.html at build time
+      # (entered=false on first render), so html-validate checks real markup.
+      - run: html-validate --preset standard out/index.html
+      - run: markdown-link-check --config .markdown-link-check.json README.md
+      - run: node scripts/smoke.mjs

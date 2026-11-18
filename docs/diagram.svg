@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="420" viewBox="0 0 920 420" font-family="Inter, -apple-system, 'Segoe UI', sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1863DC"/>
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#FF9E33"/>
+    </marker>
+  </defs>
+
+  <rect width="920" height="420" fill="#E2E8F0"/>
+  <text x="40" y="42" font-size="22" font-weight="600" fill="#020817">Media Downloader — alur permintaan</text>
+  <text x="40" y="66" font-size="13" fill="#212121">Static export di Cloudflare Pages + edge worker untuk /api/download.</text>
+
+  <!-- Browser -->
+  <g>
+    <rect x="40" y="110" width="180" height="110" rx="10" fill="#FFFFFF" stroke="#D0D5D2"/>
+    <rect x="40" y="110" width="180" height="34" rx="10" fill="#020817"/>
+    <text x="58" y="132" font-size="14" font-weight="600" fill="#FFFFFF">Browser</text>
+    <text x="58" y="166" font-size="12.5" fill="#212121">Landing (kunjungan 1)</text>
+    <text x="58" y="186" font-size="12.5" fill="#212121">Aplikasi downloader</text>
+    <text x="58" y="206" font-size="12.5" fill="#212121">Mode demo (data contoh)</text>
+  </g>
+
+  <!-- Pages static -->
+  <g>
+    <rect x="330" y="110" width="220" height="110" rx="10" fill="#FFFFFF" stroke="#D0D5D2"/>
+    <rect x="330" y="110" width="220" height="34" rx="10" fill="#1863DC"/>
+    <text x="348" y="132" font-size="14" font-weight="600" fill="#FFFFFF">Cloudflare Pages</text>
+    <text x="348" y="166" font-size="12.5" fill="#212121">Static export (Next.js)</text>
+    <text x="348" y="186" font-size="12.5" fill="#212121">Landing + aplikasi + PWA</text>
+    <text x="348" y="206" font-size="12.5" fill="#212121">unduh-media.pages.dev</text>
+  </g>
+
+  <!-- Worker -->
+  <g>
+    <rect x="330" y="270" width="220" height="110" rx="10" fill="#FFDBC4" stroke="#FF9E33"/>
+    <rect x="330" y="270" width="220" height="34" rx="10" fill="#FF9E33"/>
+    <text x="348" y="292" font-size="14" font-weight="600" fill="#FFFFFF">Edge worker _worker.js</text>
+    <text x="348" y="326" font-size="12.5" fill="#38102A">/api/download (GET/POST)</text>
+    <text x="348" y="346" font-size="12.5" fill="#38102A">Cache 10 mnt + coalescing</text>
+    <text x="348" y="366" font-size="12.5" fill="#38102A">Retry download, fallback NYT</text>
+  </g>
+
+  <!-- downr.org -->
+  <g>
+    <rect x="660" y="270" width="220" height="110" rx="10" fill="#FFFFFF" stroke="#D0D5D2"/>
+    <rect x="660" y="270" width="220" height="34" rx="10" fill="#38102A"/>
+    <text x="678" y="292" font-size="14" font-weight="600" fill="#FFFFFF">downr.org (pihak ketiga)</text>
+    <text x="678" y="326" font-size="12.5" fill="#212121">Netlify functions:</text>
+    <text x="678" y="346" font-size="12.5" fill="#212121">analytics → download → nyt</text>
+    <text x="678" y="366" font-size="12.5" fill="#212121">Mengekstrak tautan media</text>
+  </g>
+
+  <!-- Arrows -->
+  <line x1="220" y1="150" x2="322" y2="150" stroke="#1863DC" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="232" y="138" font-size="11.5" fill="#1863DC">GET /</text>
+
+  <line x1="220" y1="200" x2="300" y2="290" stroke="#FF9E33" stroke-width="2" marker-end="url(#arrow-orange)"/>
+  <text x="196" y="262" font-size="11.5" fill="#FF9E33">GET /api/download?url=…</text>
+
+  <line x1="550" y1="325" x2="652" y2="325" stroke="#1863DC" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="556" y="313" font-size="11.5" fill="#1863DC">POST {url}</text>
+
+  <path d="M 770 270 C 770 210, 520 210, 430 222" fill="none" stroke="#1863DC" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+  <text x="560" y="200" font-size="11.5" fill="#1863DC">JSON { Status, Result, Error }</text>
+
+  <path d="M 130 220 C 130 330, 130 400, 770 400" fill="none" stroke="#FF9E33" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrow-orange)"/>
+  <text x="330" y="412" font-size="11.5" fill="#FF9E33">Tautan media dibuka langsung dari sumbernya (bukan lewat server kami)</text>
+</svg>
