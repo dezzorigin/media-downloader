@@ -5,6 +5,7 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://unduh-media.pages.dev'),
   title: 'MEDIA Downloader — Unduh Media dari Media Sosial',
   description:
     'Tempel tautan video atau foto dari TikTok, Instagram, YouTube, dan puluhan platform lain — Media Downloader mengekstrak tautan medianya supaya bisa diunduh langsung. Gratis, tanpa login.',
@@ -16,6 +17,21 @@ export const metadata: Metadata = {
       'Tempel tautan video atau foto dari media sosial — tautan media aslinya diekstrak supaya bisa diunduh langsung.',
     url: 'https://unduh-media.pages.dev',
     type: 'website',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Media Downloader — tempel tautan media sosial, ekstrak tautan medianya, unduh langsung.',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'MEDIA Downloader',
+    description:
+      'Tempel tautan video atau foto dari media sosial — tautan media aslinya diekstrak supaya bisa diunduh langsung.',
+    images: ['/og-image.png'],
   },
   appleWebApp: {
     capable: true,
